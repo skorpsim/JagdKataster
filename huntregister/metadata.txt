@@ -15,7 +15,7 @@ about=QGIS-Erweiterung zur Erstellung von Jagdkatstern
  * Spenden/Schenkung unter https://github.com/skorpsim/JagdKataster/docs/07_Spenden.pdf
 
 
-tracker=https://github.com/skorpsim/JagdKataster
+tracker=https://github.com/skorpsim/JagdKataster/issues
 repository=https://github.com/skorpsim/JagdKataster
 homepage=https://github.com/skorpsim/JagdKataster
 icon=logo.svg
