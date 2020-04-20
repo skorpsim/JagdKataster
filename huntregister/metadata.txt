@@ -11,8 +11,8 @@ about=QGIS-Erweiterung zur Erstellung von Jagdkatstern
  auf Basis von ALKIS-Daten (NAS-Daten).
  Diese Erweiterung is von der Erweiterung "norGIS ALKIS-Einbindung" abhängig.
  
- * Anleitungen unter https://github.com/skorpsim/JagdKataster/docs
- * Spenden/Schenkung unter https://github.com/skorpsim/JagdKataster/docs/07_Spenden.pdf
+ * Anleitungen unter https://github.com/skorpsim/JagdKataster/tree/master/docs
+ * Spenden/Schenkung unter https://github.com/skorpsim/JagdKataster/tree/master/docs/07_Spenden.pdf
 
 
 tracker=https://github.com/skorpsim/JagdKataster/issues
