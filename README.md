@@ -9,3 +9,5 @@ Gerne können Sie sich für die Erstellung dieses Programmes und Anleitungen erk
 
 
 Lizenz: [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+
+![](https://github.com/skorpsim/JagdKataster/raw/master/JagdKataster.png)
