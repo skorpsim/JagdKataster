@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Projekterstellung</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/projekterstellung.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="next" title="Funktionsübersicht" href="funkuebersicht.html" />
+  <link rel="prev" title="Datenimport" href="dimport.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dbbereitstellung.html" class="reference internal ">Datenbankbereitstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dimport.html" class="reference internal ">Datenimport</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Projekterstellung</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#alkis-konfiguration" class="reference internal">ALKIS-Konfiguration</a></li>
+                
+                  <li class="toctree-l2"><a href="#kartendarstellung" class="reference internal">Kartendarstellung</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="funkuebersicht.html" class="reference internal ">Funktionsübersicht</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="jagdkataster.html" class="reference internal ">Jagdkataster Erstellung</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Projekterstellung</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="dimport.html"
+       title="vorheriges Kapitel">← Datenimport</a>
+  </li>
+  <li class="next">
+    <a href="funkuebersicht.html"
+       title="nächstes Kapitel">Funktionsübersicht →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="projekterstellung">
+<span id="cha-projekterstellung"></span><h1>Projekterstellung<a class="headerlink" href="#projekterstellung" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Diese Anleitung setzt eine vollständige Installation aller Programme und
+Programmkomponenten, sowie ein als <strong>PostGIS</strong>-Serverdatenbank
+bereitgestellten ALKIS-Datensatz voraus.
+Siehe hierzu die Anleitungen <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a>, <a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a> und <a class="reference internal" href="dimport.html#cha-dimport"><span class="std std-ref">Datenimport</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Starten Sie das Programm <strong>QGIS Desktop</strong> aus dem Startmenü oder der Windows-Suchleiste.</p>
+<div class="fleft mw500 docutils container" id="img-pers1">
+<img alt="_images/pers1.png" src="_images/pers1.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Neues</span> <span class="pre">Projekt</span></code> erstellen</p>
+<p class="clear"><p><div class="section" id="alkis-konfiguration">
+<span id="sec-alkiskonfig"></span><h2>ALKIS-Konfiguration<a class="headerlink" href="#alkis-konfiguration" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="fleft mw700 docutils container" id="img-pers2">
+<img alt="_images/pers2.png" src="_images/pers2.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Menüreiter</span> <span class="pre">-&gt;</span> <span class="pre">Datenbank</span> <span class="pre">-&gt;</span> <span class="pre">ALKIS</span> <span class="pre">-&gt;</span> <span class="pre">Konfiguration...</span></code> öffnen.</p>
+<p class="clear"><p><img alt="_images/pers3.png" id="img-pers3" src="_images/pers3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Konfiguration der Bezugsquelle (Server, Zugangsdaten, Zieldatenbank)
+für den Bezug der ALKIS-Daten und Auswahl der zu beziehenden ALKIS-Modelle.</p>
+<div class="fright mw500 docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Basis-DLM</p></th>
+<th class="head"><p>BasisLandschaftsModell</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DFGM</p></td>
+<td><p>Festpunktmodell</p></td>
+</tr>
+<tr class="row-odd"><td><p>DGM2</p></td>
+<td><p>DigitalesGelaendemodell2</p></td>
+</tr>
+<tr class="row-even"><td><p>DGM25</p></td>
+<td><p>DigitalesGelaendemodell25</p></td>
+</tr>
+<tr class="row-odd"><td><p>DGM5</p></td>
+<td><p>DigitalesGelaendemodell5</p></td>
+</tr>
+<tr class="row-even"><td><p>DGM50</p></td>
+<td><p>Digitales Gelaendemodell50</p></td>
+</tr>
+<tr class="row-odd"><td><p>DKKM1000</p></td>
+<td><p>KatasterkartenModell1000</p></td>
+</tr>
+<tr class="row-even"><td><p>DKKM2000</p></td>
+<td><p>KatasterkartenModell2000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DKKM500</p></td>
+<td><p>KatasterkartenModell500</p></td>
+</tr>
+<tr class="row-even"><td><p>DKKM5000</p></td>
+<td><p>KatasterkartenModell5000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLKM</p></td>
+<td><p>LiegenschaftskatasterModell</p></td>
+</tr>
+<tr class="row-even"><td><p>DLM1000</p></td>
+<td><p>LandschaftsModell1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLM250</p></td>
+<td><p>LandschaftsModell250</p></td>
+</tr>
+<tr class="row-even"><td><p>DLM50</p></td>
+<td><p>LandschaftsModell50</p></td>
+</tr>
+<tr class="row-odd"><td><p>DTK10</p></td>
+<td><p>TopographischeKarte10</p></td>
+</tr>
+<tr class="row-even"><td><p>DTK100</p></td>
+<td><p>TopographischeKarte100</p></td>
+</tr>
+<tr class="row-odd"><td><p>DTK1000</p></td>
+<td><p>TopographischeKarte1000</p></td>
+</tr>
+<tr class="row-even"><td><p>DTK25</p></td>
+<td><p>TopographischeKarte25</p></td>
+</tr>
+<tr class="row-odd"><td><p>DTK250</p></td>
+<td><p>TopographischeKarte250</p></td>
+</tr>
+<tr class="row-even"><td><p>DTK50</p></td>
+<td><p>TopographischeKarte50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic">
+<li><p>Angaben zu Bezugsquelle =&gt; Die Angaben können übernommen werden,
+wenn Sie den PostgreSQL Server entsprechend der Anleitung <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a> eingerichtet haben.</p></li>
+<li><p>Angabe der Zieldatenbank =&gt; Name der Datenbank die in Anleitung <a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a>
+bereitgestellt und in Anleitung <a class="reference internal" href="dimport.html#cha-dimport"><span class="std std-ref">Datenimport</span></a> gefüllt wurde.</p></li>
+<li><p>Angaben zur Serverauthentifizierung =&gt;
+Benutzerdaten die während Anleitung <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a> erstellt wurden.</p></li>
+<li><p>Wenn die Daten der Bezugsquelle korrekt eingetragen wurden, kann mittels Formular-Taste
+<code class="docutils literal notranslate"><span class="pre">Modelle</span> <span class="pre">laden</span></code> Die Datenbankmodelle geladen werden =&gt; Liste <code class="docutils literal notranslate"><span class="pre">Gewählte</span> <span class="pre">Modellarten</span></code>
+hat sich aktualisiert.</p></li>
+<li><p>Ihr Datensatz kann verschiedene Modelle enthalten (Siehe nebenstehende Tabelle).
+Manche Modelle enthalten überschneidende Informationen, wodurch es zu einer mehrfachen
+überlappenden Darstellung kommt, falls diese Modelle gleichzeitig selektiert sind.</p>
+<p>Die meisten Modelle enthalten zusätzliche Darstellungsobjekte die nicht zwingend benötigt werden,
+aber die Darstellung sinnvoll erweitern. In unserem Beispiel wird nur das Modell DLKM zwingend
+benötigt.</p>
+</li>
+<li><p>Formular-Taste <code class="docutils literal notranslate"><span class="pre">Layer</span> <span class="pre">einbinden</span></code> betätigen um die aktuell gewählten Modelle
+dem Projekt hinzuzufügen.</p></li>
+</ol>
+<p class="clear"><p></div>
+<div class="section" id="kartendarstellung">
+<span id="sec-kartendarstellung"></span><h2>Kartendarstellung<a class="headerlink" href="#kartendarstellung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="fleft mw500 docutils container" id="img-pers4">
+<img alt="_images/pers4.png" src="_images/pers4.png" />
+</div>
+<p>Das Bedienfeld <code class="docutils literal notranslate"><span class="pre">Bedienfeld</span> <span class="pre">Layer</span></code> sollte nun eine Gruppe <code class="docutils literal notranslate"><span class="pre">ALKIS</span></code> beinhalten.</p>
+<p class="clear"><p><div class="fleft mw500 docutils container" id="img-pers5">
+<img alt="_images/pers5.png" src="_images/pers5.png" />
+</div>
+<p>Darstellung der Gruppe =&gt; Haken setzen</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-pers6">
+<img alt="_images/pers6.png" src="_images/pers6.png" />
+</div>
+<p>Auf <code class="docutils literal notranslate"><span class="pre">ALKIS</span></code>-Gruppe <kbd class="kbd docutils literal notranslate">Rechtsklick</kbd> um Kontextmenü zu öffnen.
+<code class="docutils literal notranslate"><span class="pre">Zur</span> <span class="pre">Gruppe</span> <span class="pre">zoomen</span></code> auswählen</p>
+<p class="clear"><p><p>Das Projektfenster sollte nun Ihren Datensatz darstellen.
+Die Kartendarstellung kann, unabhängig von dem aktuellen Werkzeug,
+bei <kbd class="kbd docutils literal notranslate">gehaltenen Mausrad</kbd> verschoben werden. <kbd class="kbd docutils literal notranslate">Drehen am Mausrad</kbd>
+verändert den Kartenzoom.</p>
+<p>Sie können nun die QGIS-Standardfunktionen oder die in
+Anleitung <a class="reference internal" href="funkuebersicht.html#cha-funkuebersicht"><span class="std std-ref">Funktionsübersicht</span></a> vorgestellten Funktionen auf den Datensatz anwenden.</p>
+<img alt="_images/pers7.png" id="img-pers7" src="_images/pers7.png" />
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="dimport.html"
+       title="vorheriges Kapitel">← Datenimport</a>
+  </li>
+  <li class="next">
+    <a href="funkuebersicht.html"
+       title="nächstes Kapitel">Funktionsübersicht →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Datenimport</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/dimport.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="next" title="Projekterstellung" href="projekterstellung.html" />
+  <link rel="prev" title="Datenbankbereitstellung" href="dbbereitstellung.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dbbereitstellung.html" class="reference internal ">Datenbankbereitstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Datenimport</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#beispieldaten" class="reference internal">Beispieldaten</a></li>
+                
+                  <li class="toctree-l2"><a href="#datensatz-einlesen" class="reference internal">Datensatz einlesen</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="projekterstellung.html" class="reference internal ">Projekterstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="funkuebersicht.html" class="reference internal ">Funktionsübersicht</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="jagdkataster.html" class="reference internal ">Jagdkataster Erstellung</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Datenimport</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="dbbereitstellung.html"
+       title="vorheriges Kapitel">← Datenbankbereitstellung</a>
+  </li>
+  <li class="next">
+    <a href="projekterstellung.html"
+       title="nächstes Kapitel">Projekterstellung →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="datenimport">
+<span id="cha-dimport"></span><h1>Datenimport<a class="headerlink" href="#datenimport" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Diese Anleitung setzt eine vollständige Installation aller Programme und
+Programmkomponenten, sowie eine vorhandene <strong>PostGIS</strong>-Datenbank voraus.
+Siehe hierzu die Anleitungen <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a> und <a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="beispieldaten">
+<span id="sec-beispieldaten"></span><h2>Beispieldaten<a class="headerlink" href="#beispieldaten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Fall Sie noch keinen ALKIS-Datensatz (NAS-Daten) besitzen,
+können Sie zum Testen einen Test-Datensatz verwenden. LGL-BW stellt unter
+<a class="reference external" href="https://www.lgl-bw.de/unsere-themen/Geoinformation/AFIS-ALKIS-ATKIS/ALKIS/Testdaten/#alkis_06">https://www.lgl-bw.de/unsere-themen/Geoinformation/AFIS-ALKIS-ATKIS/ALKIS/Testdaten/#alkis_06</a>
+Testdaten bereit.</p>
+<div class="fleft mw500 docutils container" id="img-dimp1">
+<img alt="_images/dimp1.png" src="_images/dimp1.png" />
+</div>
+<p>Testdaten herunterladen und zip-komprimierter Ordner entpacken oder
+eigene ALKIS-Daten verwenden.</p>
+<p class="clear"><p></div>
+<div class="section" id="datensatz-einlesen">
+<span id="sec-norgisimport"></span><h2>Datensatz einlesen<a class="headerlink" href="#datensatz-einlesen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Starten Sie das Programm <strong>norGIS ALKIS Import</strong> aus dem Startmenü
+oder der Windows-Suchleiste.</p>
+<img alt="_images/dimp2.png" id="img-dimp2" src="_images/dimp2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Füllen Sie die Eingabefelder, bis auf die von Ihnen festgelegten Werte, wie im obigen
+Beispiel aus. Geben Sie den bei Anleitung <a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a> vergebenen
+Datenbanknamen ein. Geben Sie die bei Anleitung <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a>
+vergebenen Zugangsdaten für das Benutzerprofil des Serveradministrators (postgres) an.
+(Siehe <a class="reference external" href="installation.html#img-inst23">Installation Abbildung_23</a>)</p>
+<p>Setzen Sie den Haken bei <code class="docutils literal notranslate"><span class="pre">Datenbestand</span> <span class="pre">(neu)anlegen</span></code> wenn Sie einen Datenbestand
+neu anlegen oder einen bestehenden Bestand vollständig überschreiben möchten.
+Wählen Sie das Ihren ALKIS-Daten zugrundliegende Koordinatensystem.
+Das Koordinatensystem ist allerdings nur wichtig, wenn Ihre Kartendaten die
+richtige globale Referenz aufweisen sollen. Z.B. wenn Sie die Karte mit
+Satellitenfotos überlagern wollen. ALKIS-Datensätze sind meistens UTM32N referenziert.
+Siehe hierzu <a class="reference external" href="https://www.ldbv.bayern.de/file/png/10317/o/UTM_Zonen.png">https://www.ldbv.bayern.de/file/png/10317/o/UTM_Zonen.png</a></p>
+<img alt="_images/dimp3.png" id="img-dimp3" src="_images/dimp3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Fügen Sie über die Schaltfläche <code class="docutils literal notranslate"><span class="pre">Datei</span> <span class="pre">hinzufügen...</span></code> oder
+<code class="docutils literal notranslate"><span class="pre">Verzeichnis</span> <span class="pre">hinzufügen...</span></code> die zu importierenden Datensätze der
+<code class="docutils literal notranslate"><span class="pre">Dateiliste</span></code> hinzu. Die ALKIS-Daten, auch NAS-Daten genannt,
+haben ein XML-Dateiformat und somit die Dateiendung XML.</p>
+<img alt="_images/dimp4.png" id="img-dimp4" src="_images/dimp4.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Starten Sie den Datenimport, in die festgelegte Datenbank,
+mit der Formulartaste <code class="docutils literal notranslate"><span class="pre">Starten</span></code>.
+Sobald der Import erfolgreich abgeschlossen wurde,
+kann über die Formulartaste „Schließen“ das Programm beendet werden.</p>
+<p>Sie können nun mit Anleitung <a class="reference internal" href="projekterstellung.html#cha-projekterstellung"><span class="std std-ref">Projekterstellung</span></a> fortfahren
+und ein QGIS-Projekt erstellen.</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="dbbereitstellung.html"
+       title="vorheriges Kapitel">← Datenbankbereitstellung</a>
+  </li>
+  <li class="next">
+    <a href="projekterstellung.html"
+       title="nächstes Kapitel">Projekterstellung →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

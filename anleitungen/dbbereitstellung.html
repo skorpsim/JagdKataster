@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Datenbankbereitstellung</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/dbbereitstellung.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="next" title="Datenimport" href="dimport.html" />
+  <link rel="prev" title="Installation" href="installation.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Datenbankbereitstellung</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#verwaltung-mit-pgadmin" class="reference internal">Verwaltung mit pgAdmin</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dimport.html" class="reference internal ">Datenimport</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="projekterstellung.html" class="reference internal ">Projekterstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="funkuebersicht.html" class="reference internal ">Funktionsübersicht</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="jagdkataster.html" class="reference internal ">Jagdkataster Erstellung</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Datenbankbereitstellung</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="installation.html"
+       title="vorheriges Kapitel">← Installation</a>
+  </li>
+  <li class="next">
+    <a href="dimport.html"
+       title="nächstes Kapitel">Datenimport →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="datenbankbereitstellung">
+<span id="cha-dbbereitstellung"></span><h1>Datenbankbereitstellung<a class="headerlink" href="#datenbankbereitstellung" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Diese Anleitung setzt eine vollständige Installation aller Programme und
+Programmkomponenten voraus. Siehe hierzu die Anleitung <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="verwaltung-mit-pgadmin">
+<span id="sec-verpgadmin"></span><h2>Verwaltung mit pgAdmin<a class="headerlink" href="#verwaltung-mit-pgadmin" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Starten Sie das Programm <strong>pgAdmin 4</strong> aus dem Startmenü oder der Windows-Suchleiste.</p>
+<img alt="_images/dber1.png" src="_images/dber1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Das Serververwaltungsprogramm wird im Browser geöffnet.
+Um eine Datenbank anzulegen wird das Passwort des Serveradministrator-Benutzerprofils
+(postgres) benötigt. Das Passwort haben Sie bei der Installation festgelegt.
+(Siehe <a class="reference external" href="installation.html#img-inst23">Installation Abbildung_23</a>)</p>
+<p>Passwort mit Formulartaste <code class="docutils literal notranslate"><span class="pre">OK</span></code> bestätigen.</p>
+<div class="fleft mw500 docutils container" id="img-dber2">
+<img alt="_images/dber2.png" src="_images/dber2.png" />
+</div>
+<p>Klappen Sie die Elemente <code class="docutils literal notranslate"><span class="pre">Servers</span></code>, <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span> <span class="pre">12</span></code> und <code class="docutils literal notranslate"><span class="pre">Databases</span></code> auf.
+Bei der Installation wurden zwei Datenbanken angelegt.
+Datenbank <code class="docutils literal notranslate"><span class="pre">postgis_30_sample</span></code> ist unsere <strong>PostGIS</strong>-Beispieldatenbank und
+dient uns als Vorlage um weitere <strong>PostGIS</strong>-Datenbanken zu erzeugen.</p>
+<p class="clear"><p><div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Vorlage-Datenbank muss deaktiviert sein!</p>
+<p>Damit wir die Datenbank als Vorlage verwenden können,
+muss diese wie in der Abbildung deaktiviert sein.</p>
+<p>Falls die Datenbank aktiv ist kann mittels <kbd class="kbd docutils literal notranslate">Rechtsklick</kbd> auf den Datenbanknamen
+das Kontextmenü geöffnet werden. Wählen Sie in diesem Fall im Kontextmenü
+<code class="docutils literal notranslate"><span class="pre">Disconnect</span> <span class="pre">database...</span></code> und bestätigen Sie den Dialog.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="fleft mw700 docutils container" id="img-dber3">
+<img alt="_images/dber3.png" src="_images/dber3.png" />
+</div>
+<p>Mit einem <kbd class="kbd docutils literal notranslate">Rechtsklick</kbd> auf <code class="docutils literal notranslate"><span class="pre">Databases</span></code> öffnet sich
+das Kontextmenü und ermöglicht das Anlegen einer neuen Datenbank <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">-&gt;</span> <span class="pre">Database...</span></code>.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-dber4">
+<img alt="_images/dber4.png" src="_images/dber4.png" />
+</div>
+<p>Vergeben Sie einen eindeutigen Datenbanknamen und wechseln Sie
+anschließend zur Registerkarte <code class="docutils literal notranslate"><span class="pre">Definition</span></code>.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-dber5">
+<img alt="_images/dber5.png" src="_images/dber5.png" />
+</div>
+<p>Füllen Sie das Formular wie im nebenstehenden Bild aus.
+Unter <code class="docutils literal notranslate"><span class="pre">Template</span></code> muss die <strong>PostGIS</strong>-Vorlage ausgewählt werden,
+da diese die benötigten <strong>PostGIS</strong>-Komponenten enthält.</p>
+<p>Eine Datenbank kann nur dann als Vorlage verwendet werde,
+wenn diese gerade nicht aktiv ist.</p>
+<p>Erstellen Sie die neue Datenbank mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Save</span></code>.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-dber6">
+<img alt="_images/dber6.png" src="_images/dber6.png" />
+</div>
+<p>Die Datenbank wurde erfolgreich erstellt und kann nun mittels <strong>norGIS ALKIS Import</strong>
+mit einem ALKIS-Datensatz gefüllt werden. Siehe hierzu Anleitung <a class="reference internal" href="dimport.html#cha-dimport"><span class="std std-ref">Datenimport</span></a>.</p>
+<p class="clear"><p><div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Datensatzüberlagerung!</p>
+<p>ALKIS-Datenätze die sich auf die gleiche Region beziehen,
+müssen in separate Datenbanken importiert werden. Ansonsten überlagern sich die Datensätze.</p>
+<p>Legen Sie also für jede neue Version Ihres Datensatzes eine weitere Datenbank an.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="installation.html"
+       title="vorheriges Kapitel">← Installation</a>
+  </li>
+  <li class="next">
+    <a href="dimport.html"
+       title="nächstes Kapitel">Datenimport →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

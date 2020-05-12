@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Funktionsübersicht</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/funkuebersicht.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="next" title="Jagdkataster Erstellung" href="jagdkataster.html" />
+  <link rel="prev" title="Projekterstellung" href="projekterstellung.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dbbereitstellung.html" class="reference internal ">Datenbankbereitstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dimport.html" class="reference internal ">Datenimport</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="projekterstellung.html" class="reference internal ">Projekterstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Funktionsübersicht</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#ubersicht-erweiterte-programmoberflache" class="reference internal">Übersicht erweiterte Programmoberfläche</a></li>
+                
+                  <li class="toctree-l2"><a href="#erlauterung-der-plugin-funktionen" class="reference internal">Erläuterung der Plugin-Funktionen</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="jagdkataster.html" class="reference internal ">Jagdkataster Erstellung</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Funktionsübersicht</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="projekterstellung.html"
+       title="vorheriges Kapitel">← Projekterstellung</a>
+  </li>
+  <li class="next">
+    <a href="jagdkataster.html"
+       title="nächstes Kapitel">Jagdkataster Erstellung →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="funktionsubersicht">
+<span id="cha-funkuebersicht"></span><h1>Funktionsübersicht<a class="headerlink" href="#funktionsubersicht" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Das in den Bildern gezeigte Setup setzt eine vollständige Installation aller
+Programme und Programmkomponenten, sowie ein geladenes und aktives QGIS-ALKIS-Projekt
+voraus. Siehe hierzu die Anleitungen <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a>, <a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a>,
+<a class="reference internal" href="dimport.html#cha-dimport"><span class="std std-ref">Datenimport</span></a>, und <a class="reference internal" href="projekterstellung.html#cha-projekterstellung"><span class="std std-ref">Projekterstellung</span></a>.</p>
+<div class="section" id="ubersicht-erweiterte-programmoberflache">
+<h2>Übersicht erweiterte Programmoberfläche<a class="headerlink" href="#ubersicht-erweiterte-programmoberflache" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="fleft mw500 docutils container" id="img-fueb1">
+<img alt="_images/fueb1.png" src="_images/fueb1.png" />
+</div>
+<p>Verwaltung von <strong>norGIS ALKIS-Einbindung</strong> unter dem <code class="docutils literal notranslate"><span class="pre">Datenbank</span></code>-Reiter.</p>
+<p class="clear"><p><div class="fleft mw500 docutils container" id="img-fueb2">
+<img alt="_images/fueb2.png" src="_images/fueb2.png" />
+</div>
+<p>Plugin-Funktionen in der Werkzeugleiste.</p>
+<p class="clear"><p><div class="fleft mw500 docutils container" id="img-fueb3">
+<img alt="_images/fueb3.png" src="_images/fueb3.png" />
+</div>
+<p>Markierungslayer des geöffneten ALKIS-Datensatzes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> beinhaltet die selektierten Flurstücke des <strong>JagdKataster</strong>-Plugins.
+Diese Flurstücke werden blau dargestellt.</p>
+<p>Markierte Flurstücke der <strong>norGIS ALKIS-Einbindung</strong> werden in Layer
+<code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code> gelb dargestellt.</p>
+<p class="clear"><p></div>
+<div class="section" id="erlauterung-der-plugin-funktionen">
+<h2>Erläuterung der Plugin-Funktionen<a class="headerlink" href="#erlauterung-der-plugin-funktionen" title="Link zu dieser Überschrift">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="fico1" src="_images/fico1.png" /> Layer einbinden</p></td>
+<td><p>ALKIS-Datensatz von konfigurierter Serverdatenbank beziehen und in Projekt einfügen.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="fico1" src="_images/fico1.png" /> Konfiguration…</p></td>
+<td><p>Konfiguration der Bezugsquelle (Server, Zugangsdaten, Zieldatenbank) für Bezug der ALKIS-Daten. Auswahl der zu beziehenden ALKIS-Modelle.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 96%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Funktionsbeschreibung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="fico2" src="_images/fico2.png" /></p></td>
+<td><p>Flurstücksuche nach Beschriftungen, Flurstückskennzeichen, Straße/Hausnummer und Eigentümer. [Gelbe Anzeige in <code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="fico3" src="_images/fico3.png" /></p></td>
+<td><p>Auswahlwerkzeug Flurstücksnachweis: Anzeige des Flurstücksnachweis, wenn ein Flurstück mit einer <kbd class="kbd docutils literal notranslate">Maustaste</kbd> angeklickt wird. [Gelbe Anzeige in <code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code>]</p>
+<p>Der Nachweis kann über das Kontextmenü (<kbd class="kbd docutils literal notranslate">Rechtsklick</kbd> auf Flurstücksnachweis) gedruckt werden.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><img alt="fico4" src="_images/fico4.png" /></p></td>
+<td><p>Deselektierung aller Flurstücke in <code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code>. [Gelbe Anzeige in <code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="fico5" src="_images/fico5.png" /></p></td>
+<td><p>Selektierte Flurstücke in <code class="docutils literal notranslate"><span class="pre">Flächenmarkierung</span></code> [Gelbe Anzeige] den Flurstücken in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> [Blaue Anzeige] hinzufügen.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="fico6" src="_images/fico6.png" /></p></td>
+<td><p>Auswahlwerkzeug An/Abwählen: Ein mit einer der Maustasten angeklicktes Flurstück wird in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> selektiert, oder deselektiert falls vorher bereits selektiert. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="fico7" src="_images/fico7.png" /></p></td>
+<td><p>Ergänzende Selektierung der Flurstücke in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> anhand von Flurstücksnutzungen und Gemarkungsnummern. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p>
+<p>Bei angewählter Formular-Liste kann die Tastenkombination <kbd class="kbd docutils literal notranslate">Strg + a</kbd> und die Formulartaste <code class="docutils literal notranslate"><span class="pre">Anwählen</span></code> genutzt werden um alle Listenelemente anzuwählen.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><img alt="fico8" src="_images/fico8.png" /></p></td>
+<td><p>Deselektierung aller Flurstücke in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="fico9" src="_images/fico9.png" /></p></td>
+<td><p>Listet Flurstücksnachweise für alle in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> selektierten Flurstücke. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="fico10" src="_images/fico10.png" /></p></td>
+<td><p>Erstellung eines Jagdkatasters für alle in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> selektierten Flurstücke. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="fico11" src="_images/fico11.png" /></p></td>
+<td><p>Zeigt Flurstückszusammenfassung für alle in   <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code> selektierten Flurstücke. [Blaue Anzeige in <code class="docutils literal notranslate"><span class="pre">Jagd-Flächenmarkierung</span></code>]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="minisource docutils container">
+<p>„QGIS Logo“ qgis.org/en/site/getinvolved/styleguide is licensed under Creative Commons Attribution-ShareAlike 3.0 licence (CC BY-SA)</p>
+<p>“norBIT Logo” norbit.de/68</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="projekterstellung.html"
+       title="vorheriges Kapitel">← Projekterstellung</a>
+  </li>
+  <li class="next">
+    <a href="jagdkataster.html"
+       title="nächstes Kapitel">Jagdkataster Erstellung →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
