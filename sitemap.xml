@@ -1,0 +1,68 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://jagdkataster.org/</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/schenkung</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/impressum</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.2</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/datenschutz</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.2</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.95</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/installation</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.95</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/dbbereitstellung</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/dimport</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/projekterstellung</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/funkuebersicht</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://jagdkataster.org/anleitungen/jagdkataster</loc>
+  <lastmod>2020-05-12T20:11:43+00:00</lastmod>
+  <priority>0.95</priority>
+</url>
+
+
+</urlset>
