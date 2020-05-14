@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Jagdkataster Erstellung</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/jagdkataster.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="prev" title="Funktionsübersicht" href="funkuebersicht.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dbbereitstellung.html" class="reference internal ">Datenbankbereitstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dimport.html" class="reference internal ">Datenimport</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="projekterstellung.html" class="reference internal ">Projekterstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="funkuebersicht.html" class="reference internal ">Funktionsübersicht</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Jagdkataster Erstellung</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#flurstucksauswahl" class="reference internal">Flurstücksauswahl</a></li>
+                
+                  <li class="toctree-l2"><a href="#kataster-ausgeben" class="reference internal">Kataster ausgeben</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Jagdkataster Erstellung</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="funkuebersicht.html"
+       title="vorheriges Kapitel">← Funktionsübersicht</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="jagdkataster-erstellung">
+<span id="cha-jagdkataster"></span><h1>Jagdkataster Erstellung<a class="headerlink" href="#jagdkataster-erstellung" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Diese Anleitung setzt eine vollständige Installation aller Programme und
+Programmkomponenten, sowie ein geladenes und aktives QGIS-ALKIS-Projekt
+voraus. Siehe hierzu die Anleitungen <a class="reference internal" href="installation.html#cha-installation"><span class="std std-ref">Installation</span></a>,
+<a class="reference internal" href="dbbereitstellung.html#cha-dbbereitstellung"><span class="std std-ref">Datenbankbereitstellung</span></a>, <a class="reference internal" href="dimport.html#cha-dimport"><span class="std std-ref">Datenimport</span></a>, und <a class="reference internal" href="projekterstellung.html#cha-projekterstellung"><span class="std std-ref">Projekterstellung</span></a>.</p>
+<p>In diesem Beispiel erstellen wir ein Jagdkataster für die
+Gemarkung 082370 des BW-Testdatensatzes.
+Dabei werden wir nur Flurstücke mit einer unbefriedeten Nutzung verwenden.
+Flurstücke bei denen eine Jagdausübung aufgrund von Umgebungsbedingungen
+nicht möglich sind, oder der Eigentümer einer Jagdausübung widersprochen
+hat, werden beispielhaft ausgeschlossen.</p>
+<p>Alle in den Abbildungen gezeigten Flächen und Eigentümer entstammen dem
+BW-Testdatensatz.</p>
+<div class="section" id="flurstucksauswahl">
+<span id="sec-fsauswahl"></span><h2>Flurstücksauswahl<a class="headerlink" href="#flurstucksauswahl" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir starten mit einem geöffneten und geladenen Projekt.</p>
+<div class="fleft mw500 docutils container" id="img-jagd1">
+<img alt="_images/jagd1.png" src="_images/jagd1.png" />
+</div>
+<p>Symbol <code class="docutils literal notranslate"><span class="pre">Selektierung</span> <span class="pre">nach</span> <span class="pre">Flurstückeigenschaften</span></code> anwählen
+um schnellstmöglich alle Flurstücke von Interesse zu selektieren.</p>
+<p class="clear"><p><img alt="_images/jagd2.png" id="img-jagd2" src="_images/jagd2.png" />
+<p>Es wurde die Gemarkungsnummer und alle unbefriedeten Nutzungen, wie etwa Gehölz,
+Wald, Unland und Landwirtschaft-Grünland gewählt.
+Innerhalb einer Formular-Liste kann die Tastenkombination <kbd class="kbd docutils literal notranslate">Strg + a</kbd> und die Formulartaste
+<code class="docutils literal notranslate"><span class="pre">Anwählen</span></code> genutzt werden um alle Listenelemente anzuwählen.</p>
+<p>Bestätigen Sie das Formular mit Formulartaste <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p>
+<p>Es wurden nun alle Flurstücke der gewählten Gemarkung selektiert,
+die eine der gewählten Nutzungen enthalten. Auch dann, wenn diese Nutzung weniger als 1 m² beträgt
+und nicht die Hauptnutzung ist.</p>
+<p>In unserem Beispiel gibt es landwirtschaftliche Flächen im Ortskern.
+Diese können mit dem Einzel-Selektierungswerkzeug, durch Anklicken bei aktivem Werkzeug,
+deselektiert werden. Das Werkzeug eignet sich auch, um Flächen von Eigentümern zu entfernen
+die einer Jagdausübung widersprochen haben, oder bei denen eine Jagdausübung aufgrund
+einer Einzäunung nicht möglich ist.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Navigation mit Werkzeug</p>
+<p>Während das Werkzeug aktiv ist, kann die Karte bei <kbd class="kbd docutils literal notranslate">gedrücktem Mausrad</kbd> verschoben werden.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/jagd3.png" id="img-jagd3" src="_images/jagd3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="kataster-ausgeben">
+<span id="sec-jkausfuehren"></span><h2>Kataster ausgeben<a class="headerlink" href="#kataster-ausgeben" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Durch wählen der <code class="docutils literal notranslate"><span class="pre">Jagdkataster</span> <span class="pre">erstellen</span></code>-Funktion wird die Erstellung des Jagdkatasters gestartet.
+In diesem Beispiel muss für eine Auszahlung des Eigentümers ein Betrag von 30€ überschritten werden.
+Der Quadratmeterpreis für eine unbefriedete Fläche ist mit 0.0005€ angegeben, was 5€ pro Hektar
+entspricht.</p>
+<p>Viele der selektierten Flurstücke enthalten Nutzungen die nicht in der Jagdkataster Berechnung
+berücksichtigt werden dürfen. Setzen Sie einen Haken bei den Nutzungen die NICHT berücksichtigt
+werden sollen.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Im gezeigten Beispiel wurde die Tastenkombination <kbd class="kbd docutils literal notranslate">Strg + a</kbd> und die Formulartaste <code class="docutils literal notranslate"><span class="pre">Anwählen</span></code>
+verwendet um zuerst alle Nutzungen auszuschließen.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Bestätigen Sie das Formular mit Formulartaste <code class="docutils literal notranslate"><span class="pre">OK</span></code>. Das Jagdkataster wird erstellt.
+Die Berechnung kann einige Sekunden benötigen.</p>
+<p>Gibt es Unstimmigkeiten bei den Grundbuchangaben wird ein Dialog angezeigt mit dem die
+betroffenen Flurstücksnachweise eingesehen werden können. Das ist zum Beispiel der Fall,
+wenn ein Grundstück keinen Eigentümer besitzt oder die Summer der Anteile nicht 1 entspricht.</p>
+<img alt="_images/jagd4.png" id="img-jagd4" src="_images/jagd4.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Bei abgeschlossener Berechnung wird das Jagdkataster in einem neuen Fenster angezeigt.
+Ein <kbd class="kbd docutils literal notranslate">Rechtsklick</kbd> auf dieses Fenster öffnet das Kontextmenü mit dem das Kataster
+gedruckt oder als CSV-Datei gespeichert werden kann.
+CSV-Dateien können mit Microsoft Excel geöffnet und bearbeitet werden.</p>
+<p>Häufig besitzen Grundbücher Doppelnennungen für eine einzelne Person, einmal mit und
+ohne Geburtsdatum oder mit und ohne Zweitnamen. Prüfen Sie Liste der Eigentümer sorgfältig.
+Nur selten handelt es sich dabei wirklich um Vater und Sohn oder Mutter und Tochter mit dem
+gleichen Namen.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Der angegebene Gesamtbetrag entspricht dem Gesamtwert aller unbefriedeten Flächen.
+Unabhängig davon ob der Auszahlungsschwellwert überschritten wurde.</p>
+</div>
+<img alt="_images/jagd5.png" id="img-jagd5" src="_images/jagd5.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Fall Sie sich für die Erstellung dieses Programmes und Anleitungen erkenntlich zeigen
+wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen.
+Weitere Informationen finden Sie hier <a class="reference external" href="https://jagdkataster.org/spenden">Spenden/Schenkung</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Es kann keine Gewährleistung übernommen werden, dass das Jagdkataster nach Ihren Kriterien
+fehlerfrei erstellt wird. Am besten überprüfen Sie das Ergebnis anhand von Flurstücken
+die Ihnen persönlich bekannt sind. Nutzen Sie die Eigentümersuche unter <a class="reference internal" href="_images/fico2.png"><img alt="fico2" src="_images/fico2.png" style="width: 1em;" /></a> und die
+Übertragungsfunktion <a class="reference internal" href="_images/fico5.png"><img alt="fico5" src="_images/fico5.png" style="width: 1em;" /></a> um die Flurstücke für einen spezifischen Eigentümer zu
+selektieren.</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="funkuebersicht.html"
+       title="vorheriges Kapitel">← Funktionsübersicht</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

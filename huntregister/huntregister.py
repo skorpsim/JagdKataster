@@ -26,12 +26,14 @@
 """
 
 import os.path
+import sys
 
 from typing import List, Sequence
 
-from qgis.PyQt.QtCore import QSettings, QDir, Qt, QTranslator, QCoreApplication, QTimer
+from qgis.PyQt.QtCore import QSettings, QDir, Qt, QTranslator, QCoreApplication, QTimer, QUrl
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction, QToolBar, QMessageBox
+from qgis.PyQt.QtWebKitWidgets import QWebView
 
 qgisAvailable = False
 alkisAvailable = False
@@ -101,6 +103,9 @@ class HuntRegister:
         self.alkisSelectAreaLayer = None                                                        # QgsVectorLayer selected parcels of alkisplugin
         self.huntSelectAreaLayer = None                                                         # QgsVectorLayer selected parcels of huntplugin
 
+        # help web view
+        self.helpiew = None                                                                     # webview containing manuals 
+
         # All actions are assigned to alter self.huntSelectAreaLayer
         self.hswapAction = None                                                                 # single QAction copy selected parcels from alkisplugin to huntplugin
         self.hAddMarkAction = None                                                              # checkable QAction select and unselect parcels
@@ -109,6 +114,7 @@ class HuntRegister:
         self.hownerAction = None                                                                # single QAction get parcel certificates for all selected parcels
         self.hhuntAction = None                                                                 # single QAction create a hunt register
         self.hinfoAction = None                                                                 # single QAction get a basic summary of all selected parcels
+        self.helpAction = None                                                                  # single QAction open help files webview browser window
         # self.testAction = None                                                                # single QAction used for testing program fragments
 
         self.hAddMarkTool = None                                                                # click recognizing map tool for self.hAddMarkAction
@@ -139,6 +145,12 @@ class HuntRegister:
 
         # will be set False in run()
         self.first_start = True
+
+        self.helpview = QWebView()
+        self.helpview.resize(1280, 850)
+        self.helpview.setWindowTitle("JagdKataster Anleitungen")
+        help_dir = os.path.join(self.plugin_dir, "help", "build", "html", "index.html") 
+        self.helpview.load(QUrl.fromLocalFile(help_dir))
 
         # the toolbar entries of this plugin should be placed alongside the alkisplugin entries
         # therefore the alkisplugin toolbar is derived
@@ -196,11 +208,18 @@ class HuntRegister:
         self.hinfoAction.triggered.connect(lambda: self.core.showSummaryDialog())
         self.alkisToolBar.addAction(self.hinfoAction)
 
+        self.helpAction = QAction(QIcon("hunt:logo.svg"), "Anleitungen", self.iface.mainWindow())
+        self.helpAction.setWhatsThis("JagdKataster-Anleitungen")
+        self.helpAction.setStatusTip("JagdKataster-Anleitungen")
+        self.helpAction.triggered.connect(lambda: self.helpview.show())
+
         # self.testAction = QAction(QIcon("hunt:test.svg"), "Test", self.iface.mainWindow())
         # self.testAction.setWhatsThis("Test action")
         # self.testAction.setStatusTip("Test action")
         # self.testAction.triggered.connect(lambda: self.core.test(self.huntSelectAreaLayer))
         # self.alkisToolBar.addAction(self.testAction)
+
+        self.iface.addPluginToDatabaseMenu("&ALKIS", self.helpAction)
 
         QgsProject.instance().layersAdded.connect(self.initTimer.start)                                                         # react to changes in the layer tree. Maybe the alkis layers were added
         QgsProject.instance().layersWillBeRemoved.connect(self.layersRemoved)                                                   # remove entries in case this plugin layers are to be removed
@@ -279,6 +298,9 @@ class HuntRegister:
         if self.hinfoAction:
             self.hinfoAction.deleteLater()
             self.hinfoAction = None
+        if self.helpAction:
+            self.helpAction.deleteLater()
+            self.helpAction = None
         # if self.testAction:
         #     self.testAction.deleteLater()
         #     self.testAction = None

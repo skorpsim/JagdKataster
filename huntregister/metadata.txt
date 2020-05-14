@@ -3,7 +3,7 @@ name=JagdKataster
 qgisMinimumVersion=3.0
 description=This plugin creates german hunt cadastres from German cadastre data (therefore not localized)
 description[de]=Diese Erweiterung dient der Erstellung von Jagdkastastern und referenziert die Erweiterung "norGIS ALKIS-Einbindung".
-version=00.01.00
+version=00.01.01
 author=Simon Hodrus
 email=s.hodrus@gmx.de
 
@@ -11,13 +11,13 @@ about=QGIS-Erweiterung zur Erstellung von Jagdkatstern
  auf Basis von ALKIS-Daten (NAS-Daten).
  Diese Erweiterung is von der Erweiterung "norGIS ALKIS-Einbindung" abhängig.
  
- * Anleitungen unter https://github.com/skorpsim/JagdKataster/tree/master/docs
- * Spenden/Schenkung unter https://github.com/skorpsim/JagdKataster/raw/master/docs/07_Spenden.pdf
+ * Anleitungen unter https://jagdkataster.org/anleitungen/
+ * Spenden/Schenkung unter https://jagdkataster.org/schenkung.html
 
 
 tracker=https://github.com/skorpsim/JagdKataster/issues
-repository=https://github.com/skorpsim/JagdKataster
-homepage=https://github.com/skorpsim/JagdKataster
+repository=https://github.com/skorpsim/JagdKataster/tree/master/huntregister
+homepage=https://jagdkataster.org
 icon=logo.svg
 experimental=False
 
@@ -35,4 +35,9 @@ deprecated=False
 
 plugin_dependencies=norGIS ALKIS-Einbindung
 hasProcessingProvider=no
-# changelog=
+changelog= Änderungen in 00.01.01
+ 
+ * Change: Link neue Homepage
+ * Change: Links in Beschreibung für neue Homepage
+ * Change: Link Repository auf Plugin Unterordner
+ * Change: Anleitungen über Datenbankreiter aufrufbar 

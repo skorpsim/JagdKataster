@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html  lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta content="#3eaf7c" name="theme-color" />
+
+      <title>Installation</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+      <link rel="canonical" href="https://jagdkataster.org/installation.html" />
+    
+      <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+  <link rel="search" title="Suche" href="search.html" />
+  <link rel="next" title="Datenbankbereitstellung" href="dbbereitstellung.html" />
+  <link rel="prev" title="Anleitungen und Dokumentation" href="index.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <router-link to="https://jagdkataster.org" class="home-link">
+      
+        <img class="logo" src="_static/logo_text.svg" alt="logo"/>
+      
+    </router-link>
+  
+    <div class="links">
+      <navlinks class="can-hide">
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+      </navlinks>
+    </div>
+  </navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org"
+        class="nav-link external">
+          Homepage <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/impressum"
+        class="nav-link external">
+          Impressum <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://jagdkataster.org/datenschutz"
+        class="nav-link external">
+          Datenschutz <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/skorpsim/JagdKataster/tree/master/huntregister"
+        class="nav-link external">
+          GitHub <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Schnellsuche</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Suche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#anleitungen-und-dokumentation">Inhaltsverzeichnis</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Installation</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#qgis-norgis-alkis-import" class="reference internal">QGIS & norGIS ALKIS Import</a></li>
+                
+                  <li class="toctree-l2"><a href="#qgis-erweiterungen-plugins" class="reference internal">QGIS Erweiterungen (Plugins)</a></li>
+                
+                  <li class="toctree-l2"><a href="#postgresql-pgadmin-und-postgis" class="reference internal">PostgreSQL, pgAdmin und PostGIS</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dbbereitstellung.html" class="reference internal ">Datenbankbereitstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="dimport.html" class="reference internal ">Datenimport</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="projekterstellung.html" class="reference internal ">Projekterstellung</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="funkuebersicht.html" class="reference internal ">Funktionsübersicht</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="jagdkataster.html" class="reference internal ">Jagdkataster Erstellung</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div><!DOCTYPE html>
+<html>
+
+<div class="donate">
+    <h3 style="margin-top: 0px;">Spende/Schenkung</h3>
+    <p>Fall Sie sich für Programm und Anleitungen erkenntlich zeigen wollen, können Sie mir gerne eine Spende in Form einer Schenkung zukommen lassen. </p>
+    <a class="gbtn" href="https://jagdkataster.org/schenkung.html">Informationen</a>
+</div>
+
+</html>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Installation</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="vorheriges Kapitel">← Anleitungen und Dokumentation</a>
+  </li>
+  <li class="next">
+    <a href="dbbereitstellung.html"
+       title="nächstes Kapitel">Datenbankbereitstellung →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="installation">
+<span id="cha-installation"></span><h1>Installation<a class="headerlink" href="#installation" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Diese Schritt für Schritt Anleitung ist für Computer mit Microsoft
+Windows-Betriebssystem.
+Neben Windows wird prinzipiell auch Linux unterstützt.
+Siehe <a class="reference external" href="https://www.norbit.de/68/">https://www.norbit.de/68/</a> für die Linux-Installation.</p>
+<p>Für die Erstellung eines Jagdkatasters mit QGIS werden einige
+Programme und Programmerweiterungen (Plugins) benötigt.
+Die vollständige Programmstruktur ist in der untenstehenden Grafik abgebildet.</p>
+<p>Alle benötigten Programme und Programmkomponenten sind aktuell als Freie-Software
+(oder vergleichbar) lizenziert und können somit kosten- und werbefrei verwendet werden. Genauere Informationen finden Sie in den jeweiligen Lizenzbedingungen.</p>
+<img alt="_images/inst1.png" id="img-inst1" src="_images/inst1.png" />
+<div class="section" id="qgis-norgis-alkis-import">
+<span id="sec-qgis"></span><h2>QGIS &amp; norGIS ALKIS Import<a class="headerlink" href="#qgis-norgis-alkis-import" title="Link zu dieser Überschrift">¶</a></h2>
+<p>QGIS kann von <a class="reference external" href="https://qgis.org/de/site/forusers/download.html">https://qgis.org/de/site/forusers/download.html</a> heruntergeladen
+werden. Es wird die Netzwerkinstallation benötigt um eine erweiterte
+Installation mit zusätzlichen Komponenten durchzuführen.</p>
+<img alt="_images/inst2.png" id="img-inst2" src="_images/inst2.png" />
+<p>Starten Sie die Installation nachdem der Download abgeschlossen ist.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="fleft mw700 docutils container" id="img-inst3">
+<img alt="_images/inst3.png" src="_images/inst3.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Fortgeschrittene</span> <span class="pre">Installation</span></code> auswählen und mit Formulartaste
+<code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst4">
+<img alt="_images/inst4.png" src="_images/inst4.png" />
+</div>
+<p>Dateien <code class="docutils literal notranslate"><span class="pre">Aus</span> <span class="pre">dem</span> <span class="pre">Internet</span> <span class="pre">installieren...</span></code> auswählen und mit
+Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst5">
+<img alt="_images/inst5.png" src="_images/inst5.png" />
+</div>
+<p>Installationsverzeichnis und weitere Präferenzen auswählen
+und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst6">
+<img alt="_images/inst6.png" src="_images/inst6.png" />
+</div>
+<p>Speicherort für Installationspakete wählen oder Standard
+beibehalten und mit  Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst7">
+<img alt="_images/inst7.png" src="_images/inst7.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Direkte</span> <span class="pre">Verbindung</span></code> auswählen und mit Formulartaste
+<code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst8">
+<img alt="_images/inst8.png" src="_images/inst8.png" />
+</div>
+<p>Eine der verfügbaren Downloadseiten wählen und mit Formulartaste
+<code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst9">
+<img alt="_images/inst9.png" src="_images/inst9.png" />
+</div>
+<p>Standard <code class="docutils literal notranslate"><span class="pre">Default</span></code> bei allen Gruppen beibehalten
+und die <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> Gruppe aufklappen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst10">
+<img alt="_images/inst10.png" src="_images/inst10.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Skip</span></code> für <code class="docutils literal notranslate"><span class="pre">alkis-import:</span> <span class="pre">norGIS</span> <span class="pre">ALKIS</span> <span class="pre">Import</span></code> einmal anklicken
+um die aktuellste Version für die Installation auszuwählen.</p>
+<p>Das Gleiche für <code class="docutils literal notranslate"><span class="pre">qgis-ltr:</span> <span class="pre">QGIS</span> <span class="pre">Desktop</span> <span class="pre">(long</span> <span class="pre">term</span> <span class="pre">release)</span></code> durchführen.</p>
+<p class="clear"><p><div class="fleft mw1000 docutils container" id="img-inst11">
+<img alt="_images/inst11.png" src="_images/inst11.png" />
+</div>
+<p>Installation von <code class="docutils literal notranslate"><span class="pre">alkis-import:</span> <span class="pre">norGIS</span> <span class="pre">ALKIS</span> <span class="pre">Import</span></code> und
+<code class="docutils literal notranslate"><span class="pre">qgis-ltr:</span> <span class="pre">QGIS</span> <span class="pre">Desktop</span> <span class="pre">(long</span> <span class="pre">term</span> <span class="pre">release)</span></code> mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code>
+bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst12">
+<img alt="_images/inst12.png" src="_images/inst12.png" />
+</div>
+<p>Akzeptieren Sie die Installation aller Notwendigen Abhängigkeiten
+und bestätigen Sie die Installation mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code>.</p>
+<p>Bestätigen Sie anschließend alle zusätzlichen Lizenzbedingungen um
+die Installation zu starten.</p>
+<p class="clear"><p><div class="fleft mw1000 docutils container" id="img-inst13">
+<img alt="_images/inst13.png" src="_images/inst13.png" />
+</div>
+<p>Nach abgeschlossener Installation sind <strong>norGIS ALKIS Import</strong>
+und <strong>QGIS Desktop</strong> über das Startmenü oder die Windows-Suchleiste aufrufbar.</p>
+<p class="clear"><p></div>
+<div class="section" id="qgis-erweiterungen-plugins">
+<span id="sec-qgisext"></span><h2>QGIS Erweiterungen (Plugins)<a class="headerlink" href="#qgis-erweiterungen-plugins" title="Link zu dieser Überschrift">¶</a></h2>
+<p>QGIS Erweiterungen werden direkt aus <strong>QGIS Desktop</strong> installiert.
+Es soll die <strong>norGIS ALKIS Einbindung</strong> und <strong>JagdKataster</strong> installiert
+und aktiviert werden. Installieren Sie die <strong>norGIS ALKIS Einbindung</strong>
+am besten zuerst, denn diese muss zuerst aktiviert werden.</p>
+<div class="fleft mw500 docutils container" id="img-inst14">
+<img alt="_images/inst14.png" src="_images/inst14.png" />
+</div>
+<p>Über den Reiter <code class="docutils literal notranslate"><span class="pre">Erweiterungen</span></code> <code class="docutils literal notranslate"><span class="pre">Erweiterungen</span> <span class="pre">verwalten</span> <span class="pre">und</span> <span class="pre">installieren...</span></code>
+auswählen.</p>
+<p class="clear"><p><p>Finden Sie die Erweiterungen mittels der Suchleiste und starten Sie die
+Installation mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Erweiterung</span> <span class="pre">installieren</span></code>.</p>
+<img alt="_images/inst15.png" id="img-inst15" src="_images/inst15.png" />
+<img alt="_images/inst16.png" id="img-inst16" src="_images/inst16.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Unter <code class="docutils literal notranslate"><span class="pre">Installiert</span></code> sind die aktivierten Erweiterungen mit einem Haken
+markiert. Achten Sie darauf, dass <strong>norGIS ALKIS Einbindung</strong> und
+<strong>JagdKataster</strong> aktiv sind.</p>
+<img alt="_images/inst17.png" id="img-inst17" src="_images/inst17.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="postgresql-pgadmin-und-postgis">
+<span id="sec-postgresql"></span><h2>PostgreSQL, pgAdmin und PostGIS<a class="headerlink" href="#postgresql-pgadmin-und-postgis" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die PostgreSQL und PostGIS Versionen müssen vollständig kompatibel sein.
+Eine Kompatibilitätsmatrix ist unter
+<a class="reference external" href="https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS">https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS</a> zu finden.
+In dieser Anleitung installieren wir <strong>PostgreSQL</strong> in der Version 12
+und <strong>PostGIS</strong> 3.0.</p>
+<p>Der Downloadlink ist <a class="reference external" href="https://www.postgresql.org/download/windows/">https://www.postgresql.org/download/windows/</a>.</p>
+<div class="fleft mw500 docutils container" id="img-inst18">
+<img alt="_images/inst18.png" src="_images/inst18.png" />
+</div>
+<p>Wählen Sie den Link <code class="docutils literal notranslate"><span class="pre">Dowwnload</span> <span class="pre">the</span> <span class="pre">installer</span></code> um zur Downloadseite zu
+gelangen.</p>
+<p class="clear"><p><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Laden Sie <strong>PostgreSQL</strong> Version12.X herunter und starten die Installation.</p>
+<img alt="_images/inst19.png" id="img-inst19" src="_images/inst19.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="fleft mw700 docutils container" id="img-inst20">
+<img alt="_images/inst20.png" src="_images/inst20.png" />
+</div>
+<p>Installationsverzeichnis wählen oder Standard beibehalten und mit
+Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst21">
+<img alt="_images/inst21.png" src="_images/inst21.png" />
+</div>
+<p>Es werden alle Komponenten benötig. Alle Komponenten auswählen
+und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst22">
+<img alt="_images/inst22.png" src="_images/inst22.png" />
+</div>
+<p>Datenverzeichnis wählen oder Standard beibehalten und
+mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst23">
+<img alt="_images/inst23.png" src="_images/inst23.png" />
+</div>
+<p>Passwort für das Benutzerprofil des Datenbankadministrators
+festlegen und notieren!</p>
+<p>Eingaben mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Passwort notieren!</p>
+<p>Das Passwort des Datenbankadministrators wird später häufig benötig.</p>
+</div>
+<div class="fleft mw700 docutils container" id="img-inst24">
+<img alt="_images/inst24.png" src="_images/inst24.png" />
+</div>
+<p>Zugangsport wählen oder Standard beibehalten und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst25">
+<img alt="_images/inst25.png" src="_images/inst25.png" />
+</div>
+<p>Standard beibehalten und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p>Nachfolgende Schritte bestätigen und installieren.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst26">
+<img alt="_images/inst26.png" src="_images/inst26.png" />
+</div>
+<p>Durch setzen des Hakens wird das Programm <strong>Application Stack Builder</strong>
+automatisch gestartet. Dieses Programm wird in den folgenden Schritten benötigt.</p>
+<p><strong>PostgreSQL</strong> Installation mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Finish</span></code> abschließen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst27">
+<img alt="_images/inst27.png" src="_images/inst27.png" />
+</div>
+<p>Das Programm <strong>Application Stack Builder</strong> sollte am Ende der <strong>PostgreSQL</strong>
+Installation automatisch gestartet werden. Ansonsten ist das Programm zusammen
+mit <strong>pgAdmin</strong> über den nebenstehenden Startmenüeintrag aufrufbar.</p>
+<p class="clear"><p><p>Mit dem <strong>Application Stack Builder</strong> wird <strong>PostGIS</strong> für <strong>PostgreSQL</strong> installiert.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="fleft mw700 docutils container" id="img-inst28">
+<img alt="_images/inst28.png" src="_images/inst28.png" />
+</div>
+<p>Die installierte <strong>PostgreSQL</strong>-Version auswählen und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst29">
+<img alt="_images/inst29.png" src="_images/inst29.png" />
+</div>
+<p>Menübaum bei <code class="docutils literal notranslate"><span class="pre">Spatial</span> <span class="pre">Extensions</span></code> öffnen und Haken bei <code class="docutils literal notranslate"><span class="pre">PostGIS</span></code> setzen.
+Eingabe mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst30">
+<img alt="_images/inst30.png" src="_images/inst30.png" />
+</div>
+<p>Speicherort für Installationspakete wählen oder Standard beibehalten und
+mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst31">
+<img alt="_images/inst31.png" src="_images/inst31.png" />
+</div>
+<p>Hinweis beachten und Formular mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Weiter</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p>Lizenzbedingungen annehmen und <strong>PostGIS</strong>-Installation starten.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst32">
+<img alt="_images/inst32.png" src="_images/inst32.png" />
+</div>
+<p>Beide Komponenten anwählen. <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">spatial</span> <span class="pre">database</span></code> richtet uns eine Vorlage
+ein die wir benötigen.</p>
+<p>Eingabe mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst33">
+<img alt="_images/inst33.png" src="_images/inst33.png" />
+</div>
+<p>Installationsverzeichnis wählen oder Standard beibehalten und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p>Das Standardverzeichnis ist das Installationsverzeichnis von <strong>PostgreSQL</strong>.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst34">
+<img alt="_images/inst34.png" src="_images/inst34.png" />
+</div>
+<p>Geben Sie die <strong>PostgreSQL</strong>-Verbindungsdaten ein die Sie bei der <strong>PostgreSQL</strong>-Installation für das
+Benutzerprofil des Serveradministrators vergeben haben. (Siehe <a class="reference internal" href="#img-inst23">Abbildung_23</a>)</p>
+<p>Eingabe mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Next</span> <span class="pre">&gt;</span></code> bestätigen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst35">
+<img alt="_images/inst35.png" src="_images/inst35.png" />
+</div>
+<p>Name für die Datenbankvorlage vergeben oder Standard beibehalten und mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Install</span></code>
+die <strong>PostGIS</strong>-Installation starten.</p>
+<p class="clear"><p><div class="fleft mw500 docutils container" id="img-inst36">
+<img alt="_images/inst36.png" src="_images/inst36.png" />
+</div>
+<p>Die drei nachfolgenden Dialoge mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Ja</span></code> bestätigen.</p>
+<div class="fleft mw500 docutils container" id="img-inst37">
+<img alt="_images/inst37.png" src="_images/inst37.png" />
+</div>
+<div class="fleft mw500 docutils container" id="img-inst38">
+<img alt="_images/inst38.png" src="_images/inst38.png" />
+</div>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst39">
+<img alt="_images/inst39.png" src="_images/inst39.png" />
+</div>
+<p>Warten bis die Installation vollständig abgeschlossen ist. Formular mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Close</span></code> schließen.</p>
+<p class="clear"><p><div class="fleft mw700 docutils container" id="img-inst40">
+<img alt="_images/inst40.png" src="_images/inst40.png" />
+</div>
+<p>Das Fenster von <strong>Application Stack Builder</strong> mit Formulartaste <code class="docutils literal notranslate"><span class="pre">Fertigstellen</span></code> schließen.</p>
+<p class="clear"><p><p>Glückwunsch, die Installation aller Programme und Programmkomponenten wurden erfolgreich abgeschlossen!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="minisource docutils container">
+<p>„QGIS Logo“ qgis.org/en/site/getinvolved/styleguide is licensed under Creative Commons Attribution-ShareAlike 3.0 licence (CC BY-SA)</p>
+<p>„PostgreSQL Logo” wiki.postgresql.org/wiki/Logo „PostGIS Logo“ osgeo.org/projects/postgis</p>
+<p>“norBIT Logo” norbit.de/68</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="vorheriges Kapitel">← Anleitungen und Dokumentation</a>
+  </li>
+  <li class="next">
+    <a href="dbbereitstellung.html"
+       title="nächstes Kapitel">Datenbankbereitstellung →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, Simon Hodrus.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
