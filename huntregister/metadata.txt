@@ -35,12 +35,13 @@ deprecated=False
 
 plugin_dependencies=norGIS ALKIS-Einbindung
 hasProcessingProvider=no
+
 changelog=Änderungen in 00.01.02
- 
- * Change: Tippfehler behoben in metadata.txt
- 
+
+* Change: Tippfehler behoben in metadata.txt
+
 Änderungen in 00.01.01
- 
+
  * Change: Link neue Homepage
  * Change: Links in Beschreibung für neue Homepage
  * Change: Link Repository auf Plugin Unterordner
