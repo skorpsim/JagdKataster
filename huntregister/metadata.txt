@@ -4,8 +4,8 @@ qgisMinimumVersion=3.0
 description=This plugin creates german hunt cadastres from German cadastre data (therefore not localized)
 description[de]=Diese Erweiterung dient der Erstellung von Jagdkatastern und referenziert die Erweiterung "norGIS ALKIS-Einbindung".
 version=00.01.02
-author=Simon Hodrus
-email=s.hodrus@gmx.de
+author=Simon Wiedemann
+email=si.wiedemann@outlook.de
 
 about=QGIS-Erweiterung zur Erstellung von Jagdkatastern
  auf Basis von ALKIS-Daten (NAS-Daten).

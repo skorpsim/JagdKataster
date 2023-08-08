@@ -11,8 +11,8 @@
                               -------------------
         begin                : 2020-03-26
         git sha              : $Format:%H$
-        copyright            : (C) 2020 by Simon Hodrus
-        email                : s.hodrus@gmx.de
+        copyright            : (C) 2020 by Simon Wiedemann
+        email                : si.wiedemann@outlook.de
  ***************************************************************************/
 
 /***************************************************************************
