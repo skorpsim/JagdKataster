@@ -1,10 +1,10 @@
 [general]
-name=JagdKataster
+name=JagdKataster_dev
 qgisMinimumVersion=3.0
 description=This plugin creates german hunt cadastres from German cadastre data (therefore not localized)
 description[de]=Diese Erweiterung dient der Erstellung von Jagdkatastern und referenziert die Erweiterung "norGIS ALKIS-Einbindung".
-version=00.01.02
-author=Simon Wiedemann
+version=00.01.02-dev
+author=Simon Wiedemann(Daniel Kost) 
 email=si.wiedemann@outlook.de
 
 about=QGIS-Erweiterung zur Erstellung von Jagdkatastern
@@ -36,7 +36,11 @@ deprecated=False
 plugin_dependencies=norGIS ALKIS-Einbindung
 hasProcessingProvider=no
 
-changelog=Änderungen in 00.01.02
+changelog=Änderungen in 00.01.02-dev
+ 
+ * Change: added flat list of parcel labels to hunt register, added config to setup ui for include of gemarkungsschluessel in flat list of parcel labes
+ 
+ Änderungen in 00.01.02
  
  * Change: Tippfehler behoben in metadata.txt
  

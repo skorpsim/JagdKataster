@@ -677,13 +677,25 @@ class HuntCore():
                         share = best['anteil']                                                                                                          # get the holding share of the parcel
                         (owners, ownersType) = self.processOwnerType(flsnr, best['bse'])                                                                # get owners and owners type owner type is None for separate natural persons
 
-                        if ownersType is None:                                                                                                          # the legal entity is a single owner, most of the time a natural person or organisation
+                        if ownersType is None or ownersType == "(Einzeleigentum)":                                                                                                          # the legal entity is a single owner, most of the time a natural person or organisation
                             for bse in best['bse']:
                                 nameList = [(u"%s;%s;%s;%s" % (bse['anrede'], bse['ak_grade'], bse['name1'], bse['name2']))]                            # joins the name information to a single string                                                                                # gets the owner share for the current parcel
                                 self.processOwner(procLists, nameList, ownersType, share, bse['antverh'], parcelData)                                   # adds the parcel share to each owner
                         else:
                             nameList = []
-                            bsel = sorted(best['bse'], key=lambda n: n['name1'])
+                            #bsel = sorted(best['bse'], key=lambda n: n['name1'])
+                            # dkost Namenssortierung wird durch "Sonstiges:"-Einträge gestört
+                            # Sortiere die Einträge in best['bse'] nach folgenden Regeln:
+                            # 1. Alle Einträge, deren 'name1' mit 'sonstiges' beginnen (Groß-/Kleinschreibung egal), sollen am ENDE der Liste stehen.
+                            # 2. Alle anderen Einträge sollen alphabetisch nach 'name1' sortiert werden (ebenfalls case-insensitive).
+                            bsel = sorted(
+                                #best['bse'],                                                                                                           # use all entries for sorting
+                                [n for n in best['bse'] if not n['name1'].strip().lower().startswith("sonstiges:")],                                    # alternativelly completely filter name entries which starts with "Sonstiges:"
+                                key=lambda n: (
+                                    n['name1'].strip().lower().startswith("sonstiges:"),  # True (1) für Sonstiges → wird nach hinten sortiert
+                                    n['name1'].strip().lower()                           # alphabetisch sortieren, unabhängig von Groß-/Kleinschreibung
+                                )
+                            )
                             for bse in bsel:
                                 nameList.append(u"%s;%s;%s;%s" % (bse['anrede'], bse['ak_grade'], bse['name1'], bse['name2']))                          # generate a name list of all owners
                             self.processOwner(procLists, nameList, ownersType, share, '1/1', parcelData)                                                # a legal entity with multiple individuals with non explicit defined shares is owner of the complete parcel
@@ -741,10 +753,13 @@ class HuntCore():
         owners = []                                                                                                                                     # list of owners
 
         for ent in entries:                                                                                                                             # iterata all owner entries
+            name = ent['name']
             name1 = ent['name1']
             if len(name1) > 0:                                                                                                                          # ignore empty entries
                 if name1[0] == '(' and name1[-1] == ')':                                                                                                # filter type entries
                     ownerTypes.add(name1)
+                elif name[0] == '(':                                                                                                                    # other creteria for filtering type entries
+                    ownerTypes.add(f"({name1})")
                 else:
                     owners.append(ent)                                                                                                                  # filter valid entries
 
@@ -755,6 +770,7 @@ class HuntCore():
             return [], None
 
         (isExplicit, isValid) = ParcelShare.SharesCheckStatic([ParcelShare.StringFractionStatic(b['antverh']) for b in owners])                         # check validity of all shares
+        
         if not isValid:
             self.flsnrMessage(
                 u"Die Summe der Anteile für Bestandsnummer %s in Flurstück %s is kleiner als 1\n Bestand in Kalkulation nicht berücksichtigt" % entries[0]['bestdnr'], flsnr,
@@ -763,6 +779,15 @@ class HuntCore():
 
         if not isExplicit and len(ownerTypes) == 1:                                                                                                     # the owners are a single legal entity in case a owner type was found and the share sum is not explicit
             ownersType = ownerTypes.pop()
+        
+        # dkost add Einzeleigentum
+        elif  isExplicit and len(owners) == 1:                                                                                                        # the owners are a single legal entity since share sum is explicit and owner count is 1
+            ownersType = "(Einzeleigentum)"
+        
+        #added dkost, try to find out, which parcel is owned by multiple single legal entities. identification by share is explicit and list of owner is >1 
+        elif isExplicit and len(owners) > 1:                                                                                                       # several owners own a share of a parcel, they are "Miteigentümer"
+            ownersType = "(Miteigentum)"
+        
         elif not isExplicit:                                                                                                                            # non explicit but no owners type was found
             ownersType = "(Unbekannt (Angabe fehlt in Datensatz))"
 
@@ -789,20 +814,22 @@ class HuntCore():
 
         # names must have been sorted otherwise the identifier is different on different compositions
         nameIdentifier = hash(",".join(names))                                                                                                          # get an id by calculation the hash of the owner name fragments
+
         parcelS = ParcelShare(parcelData, pLists['uel'], holdShare, ownerShare)                                                                         # calculate the parcel share by excluding the utilizations from the utilization exclusion list (uel)
 
         if not parcelS.valid:                                                                                                                           # show an error in case the calculation does not add up
             self.iface.messageBar().pushMessage(
                 "Fehler", "Brechnungsergebnis für Flurstück %s nicht stimmig" % parcelS.flsnr, level=Qgis.Critical)
+        
+        if parcelS.surTotUnPac > 0.0:                                                                                                                     #dkost to avoid entries with 0 unpacified surface due to exclusion list, only include parcelS if huntable surface > 0
+            if nameIdentifier in pLists['nil']:                                                                                                             # check if the name identifier list (nil) already contains this owner
+                ind = pLists['nil'].index(nameIdentifier)                                                                                                   # get the owners list index
+            else:
+                pLists['pol'].append(ParcelsOwner(names, nameType))                                                                                         # add owner to the parcel owner list (pol)
+                pLists['nil'].append(nameIdentifier)                                                                                                        # add the owners name identified to the list of existing owner identifiers
+                ind = -1                                                                                                                                    # index to the latest added owner
 
-        if nameIdentifier in pLists['nil']:                                                                                                             # check if the name identifier list (nil) already contains this owner
-            ind = pLists['nil'].index(nameIdentifier)                                                                                                   # get the owners list index
-        else:
-            pLists['pol'].append(ParcelsOwner(names, nameType))                                                                                         # add owner to the parcel owner list (pol)
-            pLists['nil'].append(nameIdentifier)                                                                                                        # add the owners name identified to the list of existing owner identifiers
-            ind = -1                                                                                                                                    # index to the latest added owner
-
-        pLists['pol'][ind].sharedParcelsHolds.append(parcelS)                                                                                           # add the parcel share to the owner based pn the index
+            pLists['pol'][ind].sharedParcelsHolds.append(parcelS)                                                                                           # add the parcel share to the owner based pn the index
 
     def createProgressMessage(self, msg):
         """place message and progressbar widget in the qgis message bar"""
