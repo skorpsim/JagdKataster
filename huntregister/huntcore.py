@@ -713,17 +713,17 @@ class HuntCore():
             errLists['ehl'].append(flsnr)
             return []
 
-        if [True for h in allProcHoldings if int(h['b']) in self.nSupBestAlkis01]:                                                                      # contains one or multiple holdings that are not processable by the current version of the program
+        if any(int(h['b']) in self.nSupBestAlkis01 for h in allProcHoldings):                                                                           # contains one or multiple holdings that are not processable by the current version of the program
             errLists['hnl'].append(flsnr)
             return []
 
-        if uniqueGenHoldingB:                                                                                                                           # there are generic holdings
-            if len(uniqueGenHoldingB) > 1:                                                                                                              # the current supported generics do not support multiple different gerneic types in the same holding list
+        if len(uniqueGenHoldingB) > 0:                                                                                                                  # there are generic holdings
+            if len(uniqueGenHoldingB) > 1:                                                                                                              # the current supported generics do not support multiple different generic types in the same holding list
                 errLists['mhl'].append(flsnr)
-            else:                                                                                                                                       # all non generic holdinhs must be of the same target holding type
+            else:                                                                                                                                       # all non generic holdings must be of the same target holding type
                 genHType = uniqueGenHoldingB[0]
                 targetHType = genHType + 200 if genHType in self.genBestAlkis0 else genHType + 100                                                      # get the target type according to alkis0 or alkis1
-                if [True for h in procHoldings if int(h['b']) != targetHType]:                                                                          # check for a holding that does mot match the target type
+                if any(int(h['b']) != targetHType for h in procHoldings):                                                                               # check for a holding that does mot match the target type
                     errLists['mhl'].append(flsnr)
                     return []
 
